@@ -1,0 +1,38 @@
+﻿@page
+@model Proiect.Pages.Carduri.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Card</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Card.ID" />
+            <div class="form-group">
+                <label asp-for="Card.TipCard" class="control-label"></label>
+                <input asp-for="Card.TipCard" class="form-control" />
+                <span asp-validation-for="Card.TipCard" class="text-danger"></span>
+            </div>
+            <label asp-for="Card.Cont.ID" class="control-label">Nume Cont</label>
+            <select asp-for="Card.Cont.ID" class="form-control" asp-items="ViewBag.ContID">
+            </select>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

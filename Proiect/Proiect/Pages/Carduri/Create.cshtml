@@ -1,0 +1,44 @@
+﻿@page
+@model Proiect.Pages.Carduri.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Card</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Card.TipCard" class="control-label"></label>
+                <input asp-for="Card.TipCard" class="form-control" />
+                <span asp-validation-for="Card.TipCard" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Card.ContID" class="control-label">Nume Cont</label>
+                <select asp-for="Card.ContID" class="form-control" asp-items="ViewBag.ContID">
+                </select>
+            </div>
+            <div>
+                <label asp-for="Card.ClientID" class="control-label">Nume Client</label>
+                <select asp-for="Card.ClientID" class="form-control" asp-items="ViewBag.ClientID">
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
