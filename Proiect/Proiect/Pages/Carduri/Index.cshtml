@@ -19,6 +19,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.Card[0].TipCard)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Card[0].Client.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Card[0].Client.Prenume)
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -30,6 +37,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TipCard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Prenume)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

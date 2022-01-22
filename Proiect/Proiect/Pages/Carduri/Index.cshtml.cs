@@ -25,7 +25,8 @@ namespace Proiect.Pages.Carduri
         {
             Card = await _context.Card
                  .Include(b => b.Cont)
-                .ToListAsync();
+                 .Include(b => b.Client)
+                 .ToListAsync();
         }
     }
 }
